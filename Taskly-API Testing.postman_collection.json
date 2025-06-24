@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"vasanth\",\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"Vasa@2003\"\n}",
+					"raw": "{\n    \"name\": \"vasanth\",\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"TEST@123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -46,7 +46,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"Vasa@2003\"\n}",
+					"raw": "{\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"TEST@123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -77,7 +77,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"Vasa@2003\"\n}",
+							"raw": "{\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"TEST@123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
