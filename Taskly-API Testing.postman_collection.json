@@ -1,0 +1,735 @@
+{
+	"info": {
+		"_postman_id": "069b066e-d4b2-4f0e-992d-4894c6617990",
+		"name": "Taskly-API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45401203",
+		"_collection_link": "https://vasanth-4707298.postman.co/workspace/vasanth's-Workspace~279551e5-5b89-4bc5-8013-7381002ec747/collection/45401203-069b066e-d4b2-4f0e-992d-4894c6617990?action=share&source=collection_link&creator=45401203"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"vasanth\",\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"Vasa@2003\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasklybe.vercel.app/api/v1/auth/sign-up",
+					"protocol": "https",
+					"host": [
+						"tasklybe",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"Vasa@2003\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasklybe.vercel.app/api/v1/auth/sign-in",
+					"protocol": "https",
+					"host": [
+						"tasklybe",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"sign-in"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign In",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"vasantharajavijayakumar@gmail.com\",\n    \"password\": \"Vasa@2003\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tasklybe.vercel.app/api/v1/auth/sign-in",
+							"protocol": "https",
+							"host": [
+								"tasklybe",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "459"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jun 2025 12:28:05 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1cb-j8SRqh0aHlj9Fawz0Gi9lvMc1iA\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "bom1::iad1::xj45h-1750768084604-07a36a6a03a0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User signed in successfully!\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"685a8dd80c5e60c08c5bba57\",\n            \"name\": \"vasanth\",\n            \"email\": \"vasantharajavijayakumar@gmail.com\",\n            \"createdAt\": \"2025-06-24T11:36:56.691Z\",\n            \"updatedAt\": \"2025-06-24T11:36:56.691Z\",\n            \"__v\": 0\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODVhOGRkODBjNWU2MGMwOGM1YmJhNTciLCJpYXQiOjE3NTA3NjgwODUsImV4cCI6MTc1MDc3MTY4NX0.nY8873frJVW5aixDT3Heszk_xwe2ef2VTTLpMrfcoL8\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODVhOGRkODBjNWU2MGMwOGM1YmJhNTciLCJpYXQiOjE3NTA3NjgwODUsImV4cCI6MTc1MDc3MTY4NX0.nY8873frJVW5aixDT3Heszk_xwe2ef2VTTLpMrfcoL8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n    \"title\": \"short\",\n    \"subTask\": [\n        {\n            \"title\": \"VASANTH-API TESTING TASKLY\"\n        },\n        {\n            \"title\": \"DONE\"\n        }\n    ],\n    \"tags\": [\"work\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasklybe.vercel.app/api/v1/tasks",
+					"protocol": "https",
+					"host": [
+						"tasklybe",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n    \"title\": \"short\",\n    \"subTask\": [\n        {\n            \"title\": \"VASANTH-API TESTING TASKLY\"\n        },\n        {\n            \"title\": \"DONE\"\n        }\n    ],\n    \"tags\": [\"work\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tasklybe.vercel.app/api/v1/tasks",
+							"protocol": "https",
+							"host": [
+								"tasklybe",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "486"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jun 2025 12:30:18 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1e6-aLVXE/mIljxNFA9EcgfU9uXZSJ8\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "bom1::iad1::zp965-1750768217678-285573491ea3"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"task created successfully!\",\n    \"data\": {\n        \"task\": {\n            \"title\": \"short\",\n            \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n            \"status\": \"todo\",\n            \"priority\": \"medium\",\n            \"notificationEnabled\": false,\n            \"subTask\": [\n                {\n                    \"isCompleted\": false,\n                    \"title\": \"VASANTH-API TESTING TASKLY\"\n                },\n                {\n                    \"isCompleted\": false,\n                    \"title\": \"DONE\"\n                }\n            ],\n            \"tags\": [\n                \"work\"\n            ],\n            \"userId\": \"685a8dd80c5e60c08c5bba57\",\n            \"_id\": \"685a9a594d02825430e3bede\",\n            \"createdAt\": \"2025-06-24T12:30:17.998Z\",\n            \"updatedAt\": \"2025-06-24T12:30:17.998Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODVhOGRkODBjNWU2MGMwOGM1YmJhNTciLCJpYXQiOjE3NTA3NjgwODUsImV4cCI6MTc1MDc3MTY4NX0.nY8873frJVW5aixDT3Heszk_xwe2ef2VTTLpMrfcoL8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tasklybe.vercel.app/api/v1/tasks/user/685a8dd80c5e60c08c5bba57",
+					"protocol": "https",
+					"host": [
+						"tasklybe",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"user",
+						"685a8dd80c5e60c08c5bba57"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user tasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tasklybe.vercel.app/api/v1/tasks/user/685a8dd80c5e60c08c5bba57",
+							"protocol": "https",
+							"host": [
+								"tasklybe",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"user",
+								"685a8dd80c5e60c08c5bba57"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jun 2025 12:32:03 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"697-6Nd2/1phIJqsIbf+Obw4gslxYng\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "bom1::iad1::nrklt-1750768323334-f818cb6c46fd"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Got all tasks with user ID: 685a8dd80c5e60c08c5bba57\",\n    \"data\": {\n        \"tasks\": [\n            {\n                \"_id\": \"685a8e970c5e60c08c5bba5b\",\n                \"title\": \"short\",\n                \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n                \"status\": \"todo\",\n                \"priority\": \"medium\",\n                \"notificationEnabled\": false,\n                \"subTask\": [\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"hand short\"\n                    },\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"learn shoer\"\n                    }\n                ],\n                \"tags\": [\n                    \"work\"\n                ],\n                \"userId\": \"685a8dd80c5e60c08c5bba57\",\n                \"createdAt\": \"2025-06-24T11:40:07.212Z\",\n                \"updatedAt\": \"2025-06-24T11:40:07.212Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"685a8fe90c5e60c08c5bba65\",\n                \"title\": \"short\",\n                \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n                \"status\": \"todo\",\n                \"priority\": \"medium\",\n                \"notificationEnabled\": false,\n                \"subTask\": [\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"vasanth-testapi\"\n                    },\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"testapi\"\n                    }\n                ],\n                \"tags\": [\n                    \"work\"\n                ],\n                \"userId\": \"685a8dd80c5e60c08c5bba57\",\n                \"createdAt\": \"2025-06-24T11:45:45.661Z\",\n                \"updatedAt\": \"2025-06-24T11:45:45.661Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"685a98454d02825430e3bed6\",\n                \"title\": \"short\",\n                \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n                \"status\": \"todo\",\n                \"priority\": \"medium\",\n                \"notificationEnabled\": false,\n                \"subTask\": [\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"VASANTH\"\n                    },\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"API TESTING TASKLY\"\n                    }\n                ],\n                \"tags\": [\n                    \"work\"\n                ],\n                \"userId\": \"685a8dd80c5e60c08c5bba57\",\n                \"createdAt\": \"2025-06-24T12:21:25.108Z\",\n                \"updatedAt\": \"2025-06-24T12:21:25.108Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"685a9a594d02825430e3bede\",\n                \"title\": \"short\",\n                \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n                \"status\": \"todo\",\n                \"priority\": \"medium\",\n                \"notificationEnabled\": false,\n                \"subTask\": [\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"VASANTH-API TESTING TASKLY\"\n                    },\n                    {\n                        \"isCompleted\": false,\n                        \"title\": \"DONE\"\n                    }\n                ],\n                \"tags\": [\n                    \"work\"\n                ],\n                \"userId\": \"685a8dd80c5e60c08c5bba57\",\n                \"createdAt\": \"2025-06-24T12:30:17.998Z\",\n                \"updatedAt\": \"2025-06-24T12:30:17.998Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get a task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODVhOGRkODBjNWU2MGMwOGM1YmJhNTciLCJpYXQiOjE3NTA3NjgwODUsImV4cCI6MTc1MDc3MTY4NX0.nY8873frJVW5aixDT3Heszk_xwe2ef2VTTLpMrfcoL8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tasklybe.vercel.app/api/v1/tasks/685a98454d02825430e3bed6",
+					"protocol": "https",
+					"host": [
+						"tasklybe",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"685a98454d02825430e3bed6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get a task",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tasklybe.vercel.app/api/v1/tasks/685a98454d02825430e3bed6",
+							"protocol": "https",
+							"host": [
+								"tasklybe",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"685a98454d02825430e3bed6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "501"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jun 2025 12:33:35 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1f5-EI5V2BujsCvuvxoWNQBsMJ6onr8\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "bom1::iad1::pc4r5-1750768415103-c01e60b26aae"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Got the task with ID: 685a98454d02825430e3bed6\",\n    \"data\": {\n        \"task\": {\n            \"_id\": \"685a98454d02825430e3bed6\",\n            \"title\": \"short\",\n            \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n            \"status\": \"todo\",\n            \"priority\": \"medium\",\n            \"notificationEnabled\": false,\n            \"subTask\": [\n                {\n                    \"isCompleted\": false,\n                    \"title\": \"VASANTH\"\n                },\n                {\n                    \"isCompleted\": false,\n                    \"title\": \"API TESTING TASKLY\"\n                }\n            ],\n            \"tags\": [\n                \"work\"\n            ],\n            \"userId\": \"685a8dd80c5e60c08c5bba57\",\n            \"createdAt\": \"2025-06-24T12:21:25.108Z\",\n            \"updatedAt\": \"2025-06-24T12:21:25.108Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODVhOGRkODBjNWU2MGMwOGM1YmJhNTciLCJpYXQiOjE3NTA3NjgwODUsImV4cCI6MTc1MDc3MTY4NX0.nY8873frJVW5aixDT3Heszk_xwe2ef2VTTLpMrfcoL8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"685a98454d02825430e3bed6\",\n    \"title\": \"get ready\",\n    \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n    \"status\": \"in-progress\",\n    \"priority\": \"medium\",\n    \"notificationEnabled\": true,\n    \"subTask\": [\n        {\n            \"isCompleted\": true,\n            \"title\": \"ANGULAR-FRONTEND\"\n        },\n        {\n            \"isCompleted\": true,\n            \"title\": \"NODEJS BACKEND\"\n        }\n    ],\n    \"tags\": [\n        \"interview\"\n    ],\n    \"userId\": \"685a8dd80c5e60c08c5bba57\",\n    \"createdAt\": \"2025-06-15T04:51:30.547Z\",\n    \"updatedAt\": \"2025-06-15T04:51:30.547Z\",\n    \"__v\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasklybe.vercel.app/api/v1/tasks/685a98454d02825430e3bed6",
+					"protocol": "https",
+					"host": [
+						"tasklybe",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"685a98454d02825430e3bed6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update task",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"685a98454d02825430e3bed6\",\n    \"title\": \"get ready\",\n    \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n    \"status\": \"in-progress\",\n    \"priority\": \"medium\",\n    \"notificationEnabled\": true,\n    \"subTask\": [\n        {\n            \"isCompleted\": true,\n            \"title\": \"ANGULAR-FRONTEND\"\n        },\n        {\n            \"isCompleted\": true,\n            \"title\": \"NODEJS BACKEND\"\n        }\n    ],\n    \"tags\": [\n        \"interview\"\n    ],\n    \"userId\": \"685a8dd80c5e60c08c5bba57\",\n    \"createdAt\": \"2025-06-15T04:51:30.547Z\",\n    \"updatedAt\": \"2025-06-15T04:51:30.547Z\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tasklybe.vercel.app/api/v1/tasks/685a98454d02825430e3bed6",
+							"protocol": "https",
+							"host": [
+								"tasklybe",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"685a98454d02825430e3bed6"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "496"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jun 2025 12:36:23 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1f0-fWhYGm+Fn5mLoStewAWaIwFmLSE\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "bom1::iad1::qhkh5-1750768582638-d45639b20797"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Updated successfully!\",\n    \"data\": {\n        \"result\": {\n            \"_id\": \"685a98454d02825430e3bed6\",\n            \"title\": \"get ready\",\n            \"dueDate\": \"2025-07-15T12:02:07.878Z\",\n            \"status\": \"in-progress\",\n            \"priority\": \"medium\",\n            \"notificationEnabled\": true,\n            \"subTask\": [\n                {\n                    \"isCompleted\": true,\n                    \"title\": \"ANGULAR-FRONTEND\"\n                },\n                {\n                    \"isCompleted\": true,\n                    \"title\": \"NODEJS BACKEND\"\n                }\n            ],\n            \"tags\": [\n                \"interview\"\n            ],\n            \"userId\": \"685a8dd80c5e60c08c5bba57\",\n            \"createdAt\": \"2025-06-24T12:21:25.108Z\",\n            \"updatedAt\": \"2025-06-24T12:36:22.958Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODVhOGRkODBjNWU2MGMwOGM1YmJhNTciLCJpYXQiOjE3NTA3NjgwODUsImV4cCI6MTc1MDc3MTY4NX0.nY8873frJVW5aixDT3Heszk_xwe2ef2VTTLpMrfcoL8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://tasklybe.vercel.app/api/v1/tasks/delete/685a9a594d02825430e3bede",
+					"protocol": "https",
+					"host": [
+						"tasklybe",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"delete",
+						"685a9a594d02825430e3bede"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete task",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://tasklybe.vercel.app/api/v1/tasks/delete/685a9a594d02825430e3bede",
+							"protocol": "https",
+							"host": [
+								"tasklybe",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"delete",
+								"685a9a594d02825430e3bede"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jun 2025 12:37:46 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"4f-8L8iaEO8X9CYQU8x27j3tWy+A3Y\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "bom1::iad1::2s2z4-1750768665627-2da365cc0f24"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Deleted successfully!\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
